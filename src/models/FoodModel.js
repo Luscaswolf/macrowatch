@@ -9,9 +9,23 @@ class FoodModel{
         this.water = water;
     }
 
-    getTotalCalores(){
-        return this.calories * this.quantity
+    getTotalCalories() {
+        return this.quantity * this.calories;
+      }
+
+      getTotalProtein(){
+        return this.quantity * this.protein;
+      }
+      getTotalCarbs(){
+        return this.quantity * this.carbs
+      }
+      getTotalFats(){
+        return this.quantity * this.fats
+      }
     }
-}
+
+
+
+
 
 export default FoodModel;
