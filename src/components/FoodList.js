@@ -1,8 +1,7 @@
-
 import React from 'react';
 
 const FoodList = ({ foods }) => {
-  const totalCalories = foods.reduce((acc, food) => acc + food.getTotalCalories(), 0);
+  const totalCalories = foods.reduce((acc, food) => acc + food.calories * food.quantity, 0);
   const totalProtein = foods.reduce((acc, food) => acc + food.protein * food.quantity, 0);
   const totalCarbs = foods.reduce((acc, food) => acc + food.carbs * food.quantity, 0);
   const totalFats = foods.reduce((acc, food) => acc + food.fats * food.quantity, 0);
@@ -13,7 +12,7 @@ const FoodList = ({ foods }) => {
       <ul>
         {foods.map((food, index) => (
           <li key={index}>
-            {food.name} - Quantidade: {food.quantity}, Calorias: {food.getTotalCalories()}, 
+            {food.name} - Quantidade: {food.quantity}, Calorias: {food.calories * food.quantity}, 
             Proteínas: {food.protein * food.quantity}, Carboidratos: {food.carbs * food.quantity}, 
             Gorduras: {food.fats * food.quantity}
           </li>

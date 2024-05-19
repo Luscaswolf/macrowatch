@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import FoodForm from './components/FoodForm';
 import FoodList from './components/FoodList';
-import FoodController from './controllers/FoodController';
 
 const App = () => {
-  const [foods, setFoods] = useState(FoodController.foods);
+  const [foods, setFoods] = useState([]);
 
   const handleAddFood = (newFood) => {
-    FoodController.addFood(newFood);
-    setFoods([...FoodController.foods]); // Atualizar o estado com a nova lista de alimentos
+    setFoods([...foods, newFood]);
   };
 
   return (
