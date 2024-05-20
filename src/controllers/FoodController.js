@@ -13,4 +13,4 @@ class FoodController{
     }
 }
 
-export default new FoodController();
+export default FoodController();
