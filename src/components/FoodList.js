@@ -1,6 +1,8 @@
+// src/components/FoodList.js
+
 import React from 'react';
 
-const FoodList = ({ foods }) => {
+const FoodList = ({ foods, onRemoveFood }) => {
   const totalCalories = foods.reduce((acc, food) => acc + food.calories * food.quantity, 0);
   const totalProtein = foods.reduce((acc, food) => acc + food.protein * food.quantity, 0);
   const totalCarbs = foods.reduce((acc, food) => acc + food.carbs * food.quantity, 0);
@@ -15,6 +17,7 @@ const FoodList = ({ foods }) => {
             {food.name} - Quantidade: {food.quantity}, Calorias: {food.calories * food.quantity}, 
             Proteínas: {food.protein * food.quantity}, Carboidratos: {food.carbs * food.quantity}, 
             Gorduras: {food.fats * food.quantity}
+            <button id='remove' onClick={() => onRemoveFood(index)}>Remover</button>
           </li>
         ))}
       </ul>
